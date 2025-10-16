@@ -1,0 +1,16 @@
+{
+  "LambdaFunctionConfigurations": [
+    {
+      "Id": "TriggerAirflowOnUpload",
+      "LambdaFunctionArn": "arn:aws:lambda:us-east-1:123456789012:function:trigger_airflow_lambda",
+      "Events": ["s3:ObjectCreated:*"],
+      "Filter": {
+        "Key": {
+          "FilterRules": [
+            {"Name": "suffix", "Value": ".csv"}
+          ]
+        }
+      }
+    }
+  ]
+}
